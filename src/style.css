@@ -186,7 +186,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 70%;
+  width: 50%;
   margin: 20px 10px 5px 0;
   -webkit-animation: welcomeRight 1s;
           animation: welcomeRight 1s;
