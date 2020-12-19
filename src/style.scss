@@ -1,0 +1,321 @@
+
+// TEXT COLORS
+
+$PaleViolet: hsl(276, 100%, 81%);
+$ModerateViolet: hsl(276, 55%, 52%); //(chat on the left)
+$DesaturatedDarkViolet: hsl(271, 15%, 43%); // (chat on the right)
+$GrayishBlue: hsl(206, 6%, 79%); // (placeholder text)
+$VeryDarkDesaturatedViolet: hsl(271, 36%, 24%); // (main heading)
+$DarkGrayishViolet: hsl(270, 7%, 64%); //  (paragraph)
+
+// Gradients
+
+// These two colors are the vibrant background colors you see 
+// throughout the design and are applied as a linear gradient:
+
+$LightMagenta: hsl(293, 100%, 63%);
+$LightViolet: hsl(264, 100%, 61%);
+
+// Secondary
+
+$White: hsl(0, 0%, 100%);
+$LightGrayishViolet: hsl(270, 20%, 96%); //  (app background)
+$VeryDarkDesaturatedViolet: hsl(271, 36%, 24%); //  (submit button background)
+$VeryLightMagenta: hsl(289, 100%, 72%); //  (radio button outline)
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  overflow: hidden;
+}
+
+
+.container{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .box{
+    position: absolute;
+    height: 80%;
+    width: 450px;
+  }
+  .left{
+    background-image: linear-gradient(to bottom, $LightMagenta, $LightViolet);
+    left: -100px;
+    top: 0;
+    border-radius: 0 0 250px 250px;
+  }
+  .right{
+    background-color: $LightGrayishViolet;
+    right: -100px;
+    bottom: 0;
+    border-radius:250px 250px 0 0;
+  }
+
+  section{
+    z-index: 99;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 62.3%;
+    .content{
+      margin-left: 80px;
+      max-width: 450px;
+
+      animation: welcome 1s;
+      h1{
+        margin-bottom: 30px;
+        font-size: 3rem;
+        font-weight: 400;
+        color: $VeryDarkDesaturatedViolet;
+      }
+      p{
+        line-height: 27px;
+        color: $DarkGrayishViolet;
+      }
+    }
+    .phone{
+      height: 650px;
+      width: 350px;
+      min-width: 350px;
+      border-radius: 50px;
+      box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.253) ;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .phone-background{
+        margin-top: 4px;
+        height: 95%;
+        width: 92%;
+        background-color: $LightGrayishViolet;
+        border-radius: 40px;
+
+        header{
+          width: 100%;
+          height: 15%;
+          border-radius: 40px 40px 0 0;
+          background-image: linear-gradient(to left, $LightMagenta, $LightViolet);
+          .header-top{
+            width: 60%;
+            height: 25px;
+            margin: 0 auto;
+            margin-top: -5px;
+            background-color: white;
+            border-radius: 0 0 15px 15px;
+          }
+          .contact{
+            color: white;
+            width: 90%;
+            margin: 20px auto 0 auto;
+            display: flex;
+            align-items: center;
+            span{
+              margin-right: 10px;
+            }
+            .name{
+              margin-left: 20px;
+              h3{
+                font-size: .9rem;
+                font-weight: 400;
+              }
+              p{
+                font-size: .7rem;
+                color: $PaleViolet;
+              }
+            }
+            img{
+              height: 30px;
+              border-radius: 50%;
+              border: 1px solid white;
+            }
+            .dots{
+              margin-left: 110px;
+              transform: rotate(90deg);
+            }
+          }
+        }
+        .phone-chat{
+          margin-top: 10px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          .img-group{
+            align-self: flex-end;
+            display: flex;
+            justify-content: space-between;
+            width: 70%;
+            margin: 20px 10px 5px 0;
+
+            animation: welcomeRight 1s;
+            img{
+              height: 50px;
+              border-radius: 10px;
+            }
+          }
+          .message{
+            border-radius: 10px;
+            margin: 4px 10px;
+            font-size: .8rem;
+            max-width: 60%;
+            box-shadow: 2px 2px 2px $GrayishBlue;
+            p{
+              margin: 10px;
+            }
+          }
+          .message-left{
+            color: $ModerateViolet;
+            background-color:  hsl(270, 100%, 95%);
+            border-bottom-left-radius: 0;
+
+            animation: welcomeLeft 1s;
+          }
+          .message-right{
+            color: $DesaturatedDarkViolet;
+            background-color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 0;
+
+            animation: welcomeRight 1s;
+          }
+          .pay-button{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 40px;
+            width: 60%;
+            background-image: linear-gradient(to right, $LightMagenta, $LightViolet);
+            margin: 6px 0 0 10px ;
+            border-radius: 10px;
+
+            animation: welcomeLeft 1s;
+            .circle{
+              border: 1px solid white;
+              border-radius: 50%;
+              height: 20px;
+              width: 20px;
+              margin: 0 10px;
+              cursor: pointer;
+            }
+            h1{
+              color: white;
+              font-size: 1rem;
+              margin-right: 10px;
+            }
+            p{
+              color: rgba(255, 255, 255, 0.575);
+              font-size: .7rem;
+              width: 110px;
+            }
+          }
+        }
+        .input{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          input{
+            border-radius: 50px;
+            border: none;
+            height: 40px;
+            width: 90%;
+            margin-top: 10px;
+            padding-left: 10px;
+            &::placeholder{
+              color: $GrayishBlue;
+            }
+          }
+          button{
+            margin-left: 250px;
+            cursor: pointer;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            color: white;
+            background-color: $VeryDarkDesaturatedViolet;
+            border: none;
+            text-align: center;
+            font-size: 2rem;
+            position: absolute;
+            margin-top: 10px;
+            p{
+              margin-top: -5px;
+              margin-left: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+
+
+@media screen and (max-width: 700px) {
+  body{
+    overflow-y: scroll;
+  }
+  .container{
+    height: 100%;
+  }
+  .container{
+    section{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 100px;
+      .phone{
+        margin-top: 60px;
+        margin-bottom: 60px;
+      }
+      .content{
+        margin-left: 0;
+        width: 90%;
+      }
+    }
+  }
+  .right, .left{
+    display: none;
+  }
+}
+
+@keyframes welcome {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+}
+@keyframes welcomeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+}
+@keyframes welcomeRight {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+}
